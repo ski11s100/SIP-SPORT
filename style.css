@@ -1,0 +1,408 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #2D2D2D;
+    color: white;
+}
+
+.container {
+    width: 1480px;
+    margin: 0 auto;
+}
+
+.header, .footer {
+    background-color: #111111;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Логотип в центре, кнопка справа */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 0 20px; /* Добавлен отступ от краев */
+}
+
+.gallery-btn {
+    background-color: #FF0000;
+    color: white;
+    border: none;
+    padding: 15px 30px; /* Увеличиваем отступы, делая кнопку шире и выше */
+    cursor: pointer;
+    font-size: 18px; /* Увеличиваем размер шрифта */
+    border-radius: 5px; /* Добавляем скругленные углы для кнопки */
+    font-weight: bold;
+}
+
+/* Стили для логотипа как кнопки */
+.logo {
+    cursor: pointer; /* Указатель при наведении, как на кнопку */
+    flex-grow: 1; /* Центрирование логотипа с помощью flex-grow */
+    display: flex;
+    justify-content: center; /* Центрирование содержимого внутри .logo */
+    align-items: center;
+}
+
+.logo img {
+    max-width: 30%; /* Масштабирование в процентах */
+    max-height: 80%; /* Чтобы изображение вписывалось в высоту header */
+    height: auto;
+    border-radius: 10%; /* Скругленные края */
+}
+
+
+.contact-button {
+    background-color: #FF0000;
+    color: white;
+    border: none;
+    padding: 15px 30px; /* Увеличиваем отступы, делая кнопку шире и выше */
+    cursor: pointer;
+    font-size: 18px; /* Увеличиваем размер шрифта */
+    border-radius: 5px; /* Добавляем скругленные углы для кнопки */
+    font-weight: bold;
+}
+
+
+.block {
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.block-1 {
+    background-color: #1A1A1A;
+    height: 800px;
+    margin-bottom: -130px;
+}
+
+.block-1 h1, 
+.block-1 p {
+    font-size: 2em; /* Увеличенный размер текста */
+    text-align: left; /* Выравнивание текста по левому краю */
+    margin-left: 20px; /* Отступ от левого края */
+}
+
+.text-box {
+    background-color: #111111; /* Полупрозрачная заливка */
+    border-radius: 15px; /* Скругленные углы */
+    padding: 20px; /* Внутренние отступы */
+    margin: 0; /* Сброс стандартных отступов */
+    margin-left: 70px; /* Отступ от левого края */
+    display: inline-block; /* Компактность блока */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Легкая тень */
+    position: absolute; /* Позволяет точно позиционировать */
+    top: 50%; /* Центрирование по вертикали */
+    transform: translateY(-50%); /* Смещение для вертикального выравнивания */
+    left: 20px; /* Расстояние от левого края */
+    top: 250px;
+}
+
+.text-box-under {
+    background-color: #00ff4862; /* Полупрозрачная заливка */
+    border-radius: 15px; /* Скругленные углы */
+    padding: 10px; /* Внутренние отступы */
+    margin: 0; /* Сброс стандартных отступов */
+    margin-left: 70px; /* Отступ от левого края */
+    display: inline-block; /* Компактность блока */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Легкая тень */
+    position: absolute; /* Позволяет точно позиционировать */
+    top: 50%; /* Центрирование по вертикали */
+    transform: translateY(-50%); /* Смещение для вертикального выравнивания */
+    left: -70px; /* Расстояние от левого края */
+    right: 1px;
+    top: 380px;
+}
+
+/* Контейнер для рамки с эмодзи */
+.emoji-frame {
+    display: inline-block;
+    border: 5px solid #ffffff; /* Цвет рамки (можно поменять) */
+    border-radius: 15px; /* Скругленные углы рамки */
+    padding: 1%; /* Отступ внутри рамки */
+    margin-top: 30%;
+    margin-left: -15%; /* Расстояние от текста до рамки */
+    text-align: center; /* Выравнивание эмодзи по центру */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тень */
+    position: relative; /* Для управления порядком слоев */
+    z-index: 10; /* Помещаем рамку выше зеленого прямоугольника */
+}
+
+/* Эмодзи внутри рамки */
+.emoji {
+    font-size: 150px; /* Размер эмодзи */
+    display: block;
+}
+
+.text-bezop {
+    background-color: #111111; /* Полупрозрачная заливка */
+    border-radius: 15px; /* Скругленные углы */
+    padding: 15px; /* Внутренние отступы */
+    display: inline-block; /* Компактность блока */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Легкая тень */
+    top: 60%; /* Центрирование по вертикали */
+    transform: translateY(-10%); /* Смещение для вертикального выравнивания */
+    left: -10%; /* Расстояние от левого края */
+    top: 85%;
+}
+
+.background-image {
+    position: absolute;
+    top: -60%;
+    left: 76%;
+    transform: translate(-50%, -50%);
+    z-index: 0; /* За картинкой nabor */
+    width: 50%; /* Возможность масштабировать */
+    height: auto;
+    opacity: 0.6;
+}
+
+.block-2, .block-3, .block-4 {
+    background-color: #2D2D2D;
+    height: 300px;
+}
+
+.image-container {
+    position: relative;
+    height: 400px;
+}
+
+.image-nabor img{
+    position: absolute;
+    animation: float 3s infinite ease-in-out;
+    top: 20%; /* Начальное вертикальное центрирование */
+    left: 60%; /* Начальное горизонтальное центрирование */
+    transform: translate(-50%, -50%); /* Центрирование относительно центра фона */
+    width: 35%; /* Регулируемый масштаб */
+    z-index: 10; /* За картинкой nabor */   
+}
+
+.floating-image {
+    position: absolute;
+    animation: float 3s infinite ease-in-out;
+    top: -40%; /* Начальное вертикальное центрирование */
+    left: 60%; /* Начальное горизонтальное центрирование */
+    transform: translate(-50%, -50%); /* Центрирование относительно центра фона */
+    width: 35%; /* Регулируемый масштаб */
+}
+
+
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.contact-options {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    
+}
+
+.contact-option {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px; /* Ширина кнопки */
+    height: 80px; /* Высота кнопки */
+    border-radius: 10px;
+    transition: transform 0.2s ease;
+    --image-scale: 75%; /* Переменная для масштаба изображения */
+}
+
+.contact-option img {
+    max-width: var(--image-scale); /* Применение переменной масштаба */
+    max-height: var(--image-scale);
+    object-fit: contain;
+}
+
+.contact-option:hover {
+    transform: scale(1.1); /* Увеличение кнопки при наведении */
+}
+
+.contact-options {
+    display: flex;
+    gap: 15px; /* Расстояние между кнопками */
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Индивидуальные масштабы для каждой кнопки */
+.contact-option.telegram {
+    --image-scale: 200%; /* Масштаб изображения для Telegram */
+}
+
+.contact-option.email {
+    --image-scale: 100%; /* Масштаб изображения для Email */
+}
+
+.contact-option.phone {
+    --image-scale: 100%; /* Масштаб изображения для Телефона */
+}
+
+.contact-form {
+    margin-top: 20px;
+}
+
+.contact-form input, .submit-button {
+    margin: 5px;
+    padding: 10px;
+    width: 200px;
+}
+
+.submit-button {
+    background-color: #FF0000;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* Стили для контейнера галереи */
+.gallery-wrapper {
+    margin-top: -100px;
+    background-color: #111111;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Стили для кнопок стрелок */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 30px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.arrow.left {
+    left: 10px;
+}
+
+.arrow.right {
+    right: 10px;
+}
+
+/* Стили для контейнера галереи */
+.gallery-wrapper {
+    padding-top: 200px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Стили для кнопок стрелок */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 30px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.arrow.left {
+    left: 10px;
+}
+
+.arrow.right {
+    right: 10px;
+}
+
+/* Контейнер галереи с лентой */
+.gallery-container {
+    display: flex;
+    transition: transform 0.5s ease;
+    transform: translateX(0); /* Начальная позиция */
+}
+
+/* Стили для заголовка с фоном */
+.gallery-title {
+    z-index: 1;
+    transform: translateY(80px);
+    position: relative;
+    background-color: #ff0000;  /* Цвет фона */
+    padding: 5px 30px;         /* Отступы внутри блока */
+    border-radius: 10px;        /* Скругленные углы */
+    display: inline-block;      /* Чтобы фон был только вокруг текста */
+    margin-bottom: 1px;        /* Отступ снизу */
+}
+
+.gallery-title h2 {
+    color: white;               /* Цвет текста */
+    margin: 0;                  /* Убираем отступы вокруг текста */
+    font-size: 60px;            /* Размер шрифта */
+    text-align: center;         /* Выравнивание текста по центру */
+}
+
+/* Каждый элемент галереи */
+.gallery-item {
+    flex: 0 0 60%; /* Масштабируемый размер элемента */
+    margin: 0 10px;
+    opacity: 0.7;
+    transition: opacity 0.5s ease;
+    transform: scale(0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Центрированный элемент (фото или видео) */
+.gallery-item.active {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Стили для изображений и видео */
+.gallery-item img, .gallery-item video {
+    width: 90%;
+    height: auto;
+}
+
+/* Частично видимые элементы по бокам */
+.gallery-item.prev, .gallery-item.next {
+    opacity: 0.5;
+    transform: scale(0.9);
+}
+
+/* Если хотите отдельно стилизовать гифки */
+.gallery-item img {
+    width: 70%;
+    height: auto;
+    display: block;
+}
+
+.gallery-item-gif {
+    width: 70%;
+    height: auto;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
