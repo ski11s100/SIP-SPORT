@@ -4,10 +4,11 @@ body, html {
     font-family: Arial, sans-serif;
     background-color: #2D2D2D;
     color: white;
+    scroll-behavior: smooth;
 }
 
 .container {
-    width: 1480px;
+    max-width: 1480px;
     margin: 0 auto;
 }
 
@@ -23,16 +24,31 @@ body, html {
     padding: 0 20px; /* Отступ от краев сайта */
 }
 
-.logo {
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.header {
+    padding: unset;
 }
 
-.header-btn {
+.header__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.header__nav {
+
+}
+
+.nav__list {
+    margin: unset;
+    padding: unset;
+    list-style-type: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav__list__item {
     background-color: #008927; /* Цвет фона кнопки */
-    color: white;
     border: none;
     padding: 1% 2%;
     cursor: pointer;
@@ -43,8 +59,26 @@ body, html {
     transition: background-color 0.3s ease;
 }
 
-.header-btn:hover {
+.nav__list__item__link {
+    color: white;
+    text-decoration: none;
+}
+
+.nav__list__item:hover {
     background-color: #00c43d; /* Цвет при наведении */
+
+}
+
+.logoContainer {
+    height: 100%;
+    width: 200px;
+    cursor: pointer;
+}
+
+.logo {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
 }
 
 .gallery-btn,
@@ -52,13 +86,6 @@ body, html {
 .contact-btn {
     flex-shrink: 0; /* Кнопки не сжимаются при уменьшении ширины */
 }
-
-/* Логотип получает пространство по центру */
-.logo {
-    margin: 0 -400px; /* Расстояние между логотипом и кнопками */
-    flex-shrink: 0; /* Логотип не сжимается */
-}
-
 
 .logo img {
     max-width: 20%; /* Масштабирование в процентах */
@@ -93,7 +120,7 @@ body, html {
     margin-bottom: -130px;
 }
 
-.block-1 h1, 
+.block-1 h1,
 .block-1 p {
     font-size: 2em; /* Увеличенный размер текста */
     text-align: left; /* Выравнивание текста по левому краю */
@@ -184,14 +211,14 @@ body, html {
     height: 400px;
 }
 
-.image-nabor img{
+.image-nabor img {
     position: absolute;
     animation: float 3s infinite ease-in-out;
     top: 20%; /* Начальное вертикальное центрирование */
     left: 60%; /* Начальное горизонтальное центрирование */
     transform: translate(-50%, -50%); /* Центрирование относительно центра фона */
     width: 35%; /* Регулируемый масштаб */
-    z-index: 10; /* За картинкой nabor */   
+    z-index: 10; /* За картинкой nabor */
 }
 
 .floating-image {
@@ -202,7 +229,6 @@ body, html {
     transform: translate(-50%, -50%); /* Центрирование относительно центра фона */
     width: 35%; /* Регулируемый масштаб */
 }
-
 
 
 @keyframes float {
@@ -218,7 +244,7 @@ body, html {
     display: flex;
     justify-content: center;
     gap: 10px;
-    
+
 }
 
 .contact-option {
@@ -241,7 +267,6 @@ body, html {
     border: 2px solid #FF0000; /* Красная рамка вокруг выбранной кнопки */
     transform: scale(1.1); /* Увеличение */
 }
-
 
 
 .contact-option img {
@@ -373,18 +398,18 @@ body, html {
     z-index: 1;
     transform: translateY(80px);
     position: relative;
-    background-color: #ff0000;  /* Цвет фона */
-    padding: 5px 30px;         /* Отступы внутри блока */
-    border-radius: 10px;        /* Скругленные углы */
-    display: inline-block;      /* Чтобы фон был только вокруг текста */
-    margin-bottom: 1px;        /* Отступ снизу */
+    background-color: #ff0000; /* Цвет фона */
+    padding: 5px 30px; /* Отступы внутри блока */
+    border-radius: 10px; /* Скругленные углы */
+    display: inline-block; /* Чтобы фон был только вокруг текста */
+    margin-bottom: 1px; /* Отступ снизу */
 }
 
 .gallery-title h2 {
-    color: white;               /* Цвет текста */
-    margin: 0;                  /* Убираем отступы вокруг текста */
-    font-size: 60px;            /* Размер шрифта */
-    text-align: center;         /* Выравнивание текста по центру */
+    color: white; /* Цвет текста */
+    margin: 0; /* Убираем отступы вокруг текста */
+    font-size: 60px; /* Размер шрифта */
+    text-align: center; /* Выравнивание текста по центру */
 }
 
 /* Каждый элемент галереи */
@@ -656,7 +681,7 @@ body, html {
 .feature-item img {
     width: 50%;
     height: auto;
-    margin-bottom: 5    px;
+    margin-bottom: 5px;
     animation: swing 3s infinite;
 }
 

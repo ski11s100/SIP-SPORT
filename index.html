@@ -7,191 +7,206 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="header">
-        <button class="header-btn gallery-btn" onclick="scrollToGallery()">Галерея</button>
-        <button class="header-btn" onclick="scrollToFeatures()">Комплектация</button>
-        <div class="logo" onclick="scrollToTop()"> 
-            <img src="images/logo.png" alt="Логотип" />
+<header class="header">
+    <div class="header__content container">
+        <nav class="header__nav">
+            <ul class="nav__list">
+                <li class="nav__list__item">
+                    <a class="nav__list__item__link" href="#gallery">Галерея</a>
+                </li>
+                <li class="nav__list__item">
+                    <a class="nav__list__item__link" href="#features">Комплектация</a>
+                </li>
+                <li class="nav__list__item">
+                    <a class="nav__list__item__link" href="#price">Цена</a>
+                </li>
+                <li class="nav__list__item">
+                    <a class="nav__list__item__link" href="#contact">Связаться</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="logoContainer" onclick="scrollToTop()">
+            <img class="logo" src="images/logo.png" alt="Логотип"/>
         </div>
-        <button class="header-btn price-btn" onclick="scrollToPrice()">Цена</button>
-        <button class="header-btn contact-btn" onclick="scrollToContact()">Связаться</button>
-    </header>             
-    <main>    
-        <section class="block block-1">
-            <div class="container">
-                <div class="image-nabor">
-                    <img src="images\nabor.png" alt="Набор">
-                </div> 
-                <div class="text-box">
-                    <div>
-                        <h1>СИП</h1>
-                        <p>Наборы для обучения эксплуатации БПЛА</p>
-                    </div>
-                    <div class="text-box-under">
-                        <p>Идеален для...</p>
-                        <p>ОБУЧЕНИЯ 🧠</p>
-                        <p>СОРЕВНОВАНИЙ 🏆</p>
-                        <p>ЭКСПЕРИМЕНТОВ 💡</p>
-                    </div>
-                </div>             
-                <div class="image-frame-container" id="image-frame-container">
-                    <div class="emoji-frame">
-                        <span class="emoji">🛡️</span> <!-- Пример эмодзи -->
-                        <div class = text-bezop>
-                            ДОЛГОВЕЧНЕЕ
-                        </div>
-                    </div>
-                </div>               
-                
-                <div class="image-container">
-                    <img src="images\fon.png" alt="Фон" class="background-image">
-                </div>
-            </div>
-        </section>                   
-        <!-- Новый раздел для галереи -->
-        <section class="block block-gallery" id="gallery">
-            <div class="content">
-                <div class="gallery-title">
-                    <h2>👀</h2>
-                </div>
-                <div class="gallery-wrapper">
-                    <!-- Стрелка влево -->
-                    <button class="arrow left" onclick="moveGallery(-1)">&#10094;</button>
-                    <!-- Контейнер с элементами -->
-                    <div class="gallery-container">
-                        <!-- Фото и Видео -->
-                        <div class="gallery-item">
-                            <img src="images\andrei.png" alt="Image 1">
-                        </div>
-                        <div class="gallery-item">
-                            <video controls>
-                                <source src="video\polet2.MOV" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                        <div class="gallery-item">
-                            <div class = gallery-item-gif>
-                                <img src="gif\3d-printing.gif" alt="GIF Image">
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <img src="images\mark.png" alt="Image 2">
-                        </div>
-                        <div class="gallery-item">
-                            <video controls>
-                                <source src="video\crush-test.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                        <div class="gallery-item">
-                            <img src="images\ya.png" alt="Image 3">
-                        </div>
-                        <div class="gallery-item">
-                            <video controls>
-                                <source src="video\polet1.MOV" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                        <div class="gallery-item">
-                            <img src="images\fiol.png" alt="Image 4">
-                        </div>
-                    </div>
-                    <!-- Стрелка вправо -->
-                    <button class="arrow right" onclick="moveGallery(1)">&#10095;</button>
-                </div>
-            </div>
-        </section>
-        <section class="pricing-section" id="price">
-            <div class="pricing-header-box">
-                <h2 class="pricing-header">
-                    <span class="pricing-header-subtitle">самое интересное...</span>
-                    <br>
-                    <span class="pricing-header-main">цены</span>
-                </h2>
-            </div>
-            <div class="pricing-container">
-                <div class="pricing-card">
-                    <h3 class="pricing-amount">100 000 ₽</h3>
-                    <ul class="pricing-details">
-                        <li>+ Беспилотник</li>
-                        <li>+ Всё необходимое для сборки</li>
-                    </ul>
-                </div>
-                <div class="pricing-image">
-                    <img src="images\nabor.png" alt="Комплект БПЛА">
-                </div>
-                <div class="pricing-card">
-                    <h3 class="pricing-amount">135 000 ₽</h3>
-                    <ul class="pricing-details">
-                        <li>+ Беспилотник</li>
-                        <li>+ Всё необходимое для сборки</li>
-                        <li>+ FPV шлем</li>
-                        <li>+ Пульт</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        <section id="block-features" class="block-features">
-            <!-- Заголовок -->
-            <h2 class="features-title">
-                <span class="features-title-box">Особенности комплекта</span>
-            </h2>
-            
-            <!-- Контейнер с линиями и особенностями -->
-            <div class="features-container">
-                <!-- Разделяющие линии -->
-                <div class="divider-vertical"></div>
-                <div class="divider-horizontal"></div>
-                
-                <!-- Сетка особенностей -->
-                <div class="features-grid">
-                    <div class="feature-item">
-                        <img src="images\case.png" alt="Кейс">
-                        <p>удобный ударопрочный кейс</p>
-                    </div>
-                    <div class="feature-item">
-                        <img src="images\note.png" alt="Инструкция">
-                        <p>понятная инструкция по сборке</p>
-                    </div>
-                    <div class="feature-item">
-                        <img src="images\instrument.png" alt="Инструменты">
-                        <p>богатый комплект качественного инструмента</p>
-                    </div>
-                    <div class="feature-item">
-                        <img src="images\rama.png" alt="Запасные рамы">
-                        <p>запасные рамы</p>
-                    </div>
-                </div>
-            </div>
-        </section>                
-        <section class="block block-2" id="contact">
-            <div class="container">
-                <h2>Как удобнее?</h2>
-                <div class="contact-options">
-                    <button class="contact-option telegram" onclick="selectContact('Telegram')">
-                        <img src="images/telegram_logo.jpg" alt="Telegram">
-                    </button>
-                    <button class="contact-option email" onclick="selectContact('Email')">
-                        <img src="images/pochta.png" alt="Email">
-                    </button>
-                    <button class="contact-option phone" onclick="selectContact('Phone')">
-                        <img src="images/telephone.png" alt="Телефон">
-                    </button>
-                </div>
-                <form class="contact-form" id="contact-form">
-                    <input type="text" id="name" placeholder="Имя" required>
-                    <input type="text" id="address" placeholder="Адрес">
-                    <input type="text" id="phone" placeholder="Телефон">
-                    <button type="submit" class="submit-button">Отправить контакт</button>
-                </form>
-            </div>
-        </section>          
-    </main>
-    <footer class="footer">
+    </div>
+</header>
+<main>
+    <section class="block block-1">
         <div class="container">
-            <p>© 2024 СИП. Все права защищены.</p>
+            <div class="image-nabor">
+                <img src="images\nabor.png" alt="Набор">
+            </div>
+            <div class="text-box">
+                <div>
+                    <h1>СИП</h1>
+                    <p>Наборы для обучения эксплуатации БПЛА</p>
+                </div>
+                <div class="text-box-under">
+                    <p>Идеален для...</p>
+                    <p>ОБУЧЕНИЯ 🧠</p>
+                    <p>СОРЕВНОВАНИЙ 🏆</p>
+                    <p>ЭКСПЕРИМЕНТОВ 💡</p>
+                </div>
+            </div>
+            <div class="image-frame-container" id="image-frame-container">
+                <div class="emoji-frame">
+                    <span class="emoji">🛡️</span> <!-- Пример эмодзи -->
+                    <div class=text-bezop>
+                        ДОЛГОВЕЧНЕЕ
+                    </div>
+                </div>
+            </div>
+
+            <div class="image-container">
+                <img src="images\fon.png" alt="Фон" class="background-image">
+            </div>
         </div>
-    </footer>
-    <script src="script.js"></script>
+    </section>
+    <!-- Новый раздел для галереи -->
+    <section class="block block-gallery" id="gallery">
+        <div class="content">
+            <div class="gallery-title">
+                <h2>👀</h2>
+            </div>
+            <div class="gallery-wrapper">
+                <!-- Стрелка влево -->
+                <button class="arrow left" onclick="moveGallery(-1)">&#10094;</button>
+                <!-- Контейнер с элементами -->
+                <div class="gallery-container">
+                    <!-- Фото и Видео -->
+                    <div class="gallery-item">
+                        <img src="images\andrei.png" alt="Image 1">
+                    </div>
+                    <div class="gallery-item">
+                        <video controls>
+                            <source src="video\polet2.MOV" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="gallery-item">
+                        <div class=gallery-item-gif>
+                            <img src="gif\3d-printing.gif" alt="GIF Image">
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images\mark.png" alt="Image 2">
+                    </div>
+                    <div class="gallery-item">
+                        <video controls>
+                            <source src="video\crush-test.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images\ya.png" alt="Image 3">
+                    </div>
+                    <div class="gallery-item">
+                        <video controls>
+                            <source src="video\polet1.MOV" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images\fiol.png" alt="Image 4">
+                    </div>
+                </div>
+                <!-- Стрелка вправо -->
+                <button class="arrow right" onclick="moveGallery(1)">&#10095;</button>
+            </div>
+        </div>
+    </section>
+    <section class="pricing-section" id="price">
+        <div class="pricing-header-box">
+            <h2 class="pricing-header">
+                <span class="pricing-header-subtitle">самое интересное...</span>
+                <br>
+                <span class="pricing-header-main">цены</span>
+            </h2>
+        </div>
+        <div class="pricing-container">
+            <div class="pricing-card">
+                <h3 class="pricing-amount">100 000 ₽</h3>
+                <ul class="pricing-details">
+                    <li>+ Беспилотник</li>
+                    <li>+ Всё необходимое для сборки</li>
+                </ul>
+            </div>
+            <div class="pricing-image">
+                <img src="images\nabor.png" alt="Комплект БПЛА">
+            </div>
+            <div class="pricing-card">
+                <h3 class="pricing-amount">135 000 ₽</h3>
+                <ul class="pricing-details">
+                    <li>+ Беспилотник</li>
+                    <li>+ Всё необходимое для сборки</li>
+                    <li>+ FPV шлем</li>
+                    <li>+ Пульт</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="features" class="block-features">
+        <!-- Заголовок -->
+        <h2 class="features-title">
+            <span class="features-title-box">Особенности комплекта</span>
+        </h2>
+
+        <!-- Контейнер с линиями и особенностями -->
+        <div class="features-container">
+            <!-- Разделяющие линии -->
+            <div class="divider-vertical"></div>
+            <div class="divider-horizontal"></div>
+
+            <!-- Сетка особенностей -->
+            <div class="features-grid">
+                <div class="feature-item">
+                    <img src="images\case.png" alt="Кейс">
+                    <p>удобный ударопрочный кейс</p>
+                </div>
+                <div class="feature-item">
+                    <img src="images\note.png" alt="Инструкция">
+                    <p>понятная инструкция по сборке</p>
+                </div>
+                <div class="feature-item">
+                    <img src="images\instrument.png" alt="Инструменты">
+                    <p>богатый комплект качественного инструмента</p>
+                </div>
+                <div class="feature-item">
+                    <img src="images\rama.png" alt="Запасные рамы">
+                    <p>запасные рамы</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="block block-2" id="contact">
+        <div class="container">
+            <h2>Как удобнее?</h2>
+            <div class="contact-options">
+                <button class="contact-option telegram" onclick="selectContact('Telegram')">
+                    <img src="images/telegram_logo.jpg" alt="Telegram">
+                </button>
+                <button class="contact-option email" onclick="selectContact('Email')">
+                    <img src="images/pochta.png" alt="Email">
+                </button>
+                <button class="contact-option phone" onclick="selectContact('Phone')">
+                    <img src="images/telephone.png" alt="Телефон">
+                </button>
+            </div>
+            <form class="contact-form" id="contact-form">
+                <input type="text" id="name" placeholder="Имя" required>
+                <input type="text" id="address" placeholder="Адрес">
+                <input type="text" id="phone" placeholder="Телефон">
+                <button type="submit" class="submit-button">Отправить контакт</button>
+            </form>
+        </div>
+    </section>
+</main>
+<footer class="footer">
+    <div class="container">
+        <p>© 2024 СИП. Все права защищены.</p>
+    </div>
+</footer>
+<script src="script.js"></script>
 </body>
 </html>
