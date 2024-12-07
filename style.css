@@ -12,39 +12,56 @@ body, html {
 }
 
 .header, .footer {
-    background-color: #111111;
-    height: 100px;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Логотип в центре, кнопка справа */
+    justify-content: space-around; /* Равномерное распределение элементов */
+    background-color: #111111;
+    height: 100px;
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding: 0 20px; /* Добавлен отступ от краев */
+    padding: 0 20px; /* Отступ от краев сайта */
 }
 
-.gallery-btn {
-    background-color: #FF0000;
-    color: white;
-    border: none;
-    padding: 15px 30px; /* Увеличиваем отступы, делая кнопку шире и выше */
-    cursor: pointer;
-    font-size: 18px; /* Увеличиваем размер шрифта */
-    border-radius: 5px; /* Добавляем скругленные углы для кнопки */
-    font-weight: bold;
-}
-
-/* Стили для логотипа как кнопки */
 .logo {
-    cursor: pointer; /* Указатель при наведении, как на кнопку */
-    flex-grow: 1; /* Центрирование логотипа с помощью flex-grow */
+    cursor: pointer;
     display: flex;
-    justify-content: center; /* Центрирование содержимого внутри .logo */
+    justify-content: center;
     align-items: center;
 }
 
+.header-btn {
+    background-color: #008927; /* Цвет фона кнопки */
+    color: white;
+    border: none;
+    padding: 1% 2%;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin: 0 1%; /* Горизонтальные отступы между кнопками */
+    transition: background-color 0.3s ease;
+}
+
+.header-btn:hover {
+    background-color: #00c43d; /* Цвет при наведении */
+}
+
+.gallery-btn,
+.price-btn,
+.contact-btn {
+    flex-shrink: 0; /* Кнопки не сжимаются при уменьшении ширины */
+}
+
+/* Логотип получает пространство по центру */
+.logo {
+    margin: 0 -400px; /* Расстояние между логотипом и кнопками */
+    flex-shrink: 0; /* Логотип не сжимается */
+}
+
+
 .logo img {
-    max-width: 30%; /* Масштабирование в процентах */
+    max-width: 20%; /* Масштабирование в процентах */
     max-height: 80%; /* Чтобы изображение вписывалось в высоту header */
     height: auto;
     border-radius: 10%; /* Скругленные края */
@@ -52,7 +69,7 @@ body, html {
 
 
 .contact-button {
-    background-color: #FF0000;
+    background-color: #00ff4862;
     color: white;
     border: none;
     padding: 15px 30px; /* Увеличиваем отступы, делая кнопку шире и выше */
@@ -61,7 +78,6 @@ body, html {
     border-radius: 5px; /* Добавляем скругленные углы для кнопки */
     font-weight: bold;
 }
-
 
 .block {
     height: 800px;
@@ -221,6 +237,13 @@ body, html {
     --image-scale: 75%; /* Переменная для масштаба изображения */
 }
 
+.contact-option.selected {
+    border: 2px solid #FF0000; /* Красная рамка вокруг выбранной кнопки */
+    transform: scale(1.1); /* Увеличение */
+}
+
+
+
 .contact-option img {
     max-width: var(--image-scale); /* Применение переменной масштаба */
     max-height: var(--image-scale);
@@ -270,27 +293,32 @@ body, html {
 
 /* Стили для контейнера галереи */
 .gallery-wrapper {
-    margin-top: -100px;
+    margin-top: -60px;
     background-color: #111111;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    height: 450px;
 }
 
 /* Стили для кнопок стрелок */
 .arrow {
+    width: 80px; /* Ширина кнопок */
+    height: 120px; /* Высота кнопок */
+    font-size: 24px; /* Размер текста или иконки */
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.732);
     color: white;
     border: none;
     font-size: 30px;
     padding: 10px;
     cursor: pointer;
     z-index: 10;
+    border-radius: 10px;
 }
 
 .arrow.left {
@@ -364,7 +392,7 @@ body, html {
     flex: 0 0 60%; /* Масштабируемый размер элемента */
     margin: 0 10px;
     opacity: 0.7;
-    transition: opacity 0.5s ease;
+    transition: opacity 1s ease;
     transform: scale(0.8);
     display: flex;
     justify-content: center;
@@ -386,7 +414,7 @@ body, html {
 /* Частично видимые элементы по бокам */
 .gallery-item.prev, .gallery-item.next {
     opacity: 0.5;
-    transform: scale(0.9);
+    transform: scale(0.7);
 }
 
 /* Если хотите отдельно стилизовать гифки */
@@ -401,8 +429,263 @@ body, html {
     height: auto;
 }
 
+/* Секция цен */
+.pricing-section {
+    padding: 0px 50px; /* Уменьшен верхний и нижний отступ */
+    background-color: #2D2D2D;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Прямоугольник вокруг заголовка */
+.pricing-header-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1e1e1e; /* Цвет фона (тёмный) */
+    padding: 20px; /* Внутренний отступ */
+    border-radius: 15px; /* Скруглённые углы */
+    margin-bottom: 30px; /* Отступ снизу */
+}
+
+/* Заголовок внутри прямоугольника */
+.pricing-header {
+    text-align: center;
+    color: #fff; /* Белый текст */
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+/* Верхняя строка ("самое интересное...") */
+.pricing-header-subtitle {
+    font-size: 16px; /* Размер шрифта */
+    color: #ccc; /* Серый текст */
+    font-weight: normal; /* Обычное начертание */
+    text-transform: lowercase; /* Приведение текста к нижнему регистру */
+    display: block; /* Отображается как отдельный блок */
+    margin-bottom: 5px; /* Отступ от нижней части */
+}
+
+/* Нижняя строка ("цены") */
+.pricing-header-main {
+    font-size: 36px; /* Размер основного текста */
+    font-weight: bold; /* Жирное начертание */
+    color: #fff; /* Белый цвет */
+    text-transform: uppercase; /* Верхний регистр */
+    border-top: 2px solid #fff; /* Разделительная линия над текстом */
+    padding-top: 10px; /* Отступ текста от линии */
+}
+
+.pricing-title {
+    font-size: 28px; /* Чуть меньше шрифт */
+    color: #ffffff;
+    margin-bottom: 20px; /* Уменьшен нижний отступ */
+    font-weight: bold;
+}
+
+.pricing-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Уменьшен промежуток между элементами */
+}
+
+.pricing-card {
+    background-color: hsl(0, 0%, 100%);
+    padding: 15px; /* Уменьшен внутренний отступ */
+    border-radius: 10px;
+    width: 220px; /* Сужены карточки */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.pricing-amount {
+    font-size: 24px; /* Уменьшен размер шрифта */
+    color: #000;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.pricing-details {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pricing-details li {
+    font-size: 14px;
+    color: #555;
+    margin: 3px 0;
+}
+
+.pricing-image {
+    max-width: 300px; /* Ограничение ширины изображения */
+}
+
+.pricing-image img {
+    width: 100%; /* Картинка занимает весь контейнер */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Общий стиль блока */
+.block-features {
+    position: relative;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Заголовок блока */
+.features-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px; /* Расстояние до разделяющих линий */
+}
+
+/* Контейнер для линий и сетки */
+.features-container {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Высота контейнера */
+    margin: 0 auto;
+}
+
+/* Разделяющие линии */
+.divider-vertical,
+.divider-horizontal {
+    position: absolute;
+    background-color: #333;
+    z-index: 1;
+}
+
+.divider-vertical {
+    width: 5px;
+    height: 100%;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+}
+
+.divider-horizontal {
+    height: 5px;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+/* Общий стиль блока */
+.block-features {
+    position: relative;
+    text-align: center;
+    padding: 100px;
+}
+
+/* Заголовок блока */
+.features-title {
+    position: relative;
+    margin-bottom: 1%; /* Отступ от разделяющих линий */
+}
+
+.features-title-box {
+    display: inline-block;
+    background-color: #1e1e1e;
+    color: #fff;
+    padding: 2% 20%;
+    border-radius: 15px; /* Закругленные углы */
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Контейнер для линий и сетки */
+.features-container {
+    position: relative;
+    width: 70%;
+    height: 500px; /* Высота контейнера */
+    margin: 0 auto;
+}
+
+/* Разделяющие линии */
+.divider-vertical,
+.divider-horizontal {
+    position: absolute;
+    background-color: #ffffff;
+    z-index: 1;
+}
+
+.divider-vertical {
+    width: 2px;
+    height: 100%;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+}
+
+.divider-horizontal {
+    height: 2px;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    transform: translateY(50%);
+}
+
+/* Сетка особенностей */
+.features-grid {
+    position: absolute;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10%; /* Расстояние между элементами */
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.feature-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+}
+
+/* Картинка и текст */
+.feature-item img {
+    width: 50%;
+    height: auto;
+    margin-bottom: 5    px;
+    animation: swing 3s infinite;
+}
+
+.feature-item p {
+    font-size: 22px;
+    color: #ffffff;
+    margin: 0;
+    height: 50px; /* Установите фиксированную высоту для текста */
+    display: flex;
+    align-items: center; /* Выравнивание текста по вертикали */
+    justify-content: center; /* Центрирование текста по горизонтали */
+}
+
+/* Анимация покачивания */
+@keyframes swing {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-5deg);
+    }
+    75% {
+        transform: rotate(5deg);
+    }
+}
+
 .footer {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+

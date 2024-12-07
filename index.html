@@ -8,12 +8,14 @@
 </head>
 <body>
     <header class="header">
-        <button class="gallery-btn" onclick="scrollToGallery()">галерея</button>
-        <div class="logo" onclick="scrollToTop()"> <!-- При клике вызывается scrollToTop() -->
+        <button class="header-btn gallery-btn" onclick="scrollToGallery()">Галерея</button>
+        <button class="header-btn" onclick="scrollToFeatures()">Комплектация</button>
+        <div class="logo" onclick="scrollToTop()"> 
             <img src="images/logo.png" alt="Логотип" />
         </div>
-        <button class="contact-button" onclick="scrollToContact()">связаться</button>
-    </header>    
+        <button class="header-btn price-btn" onclick="scrollToPrice()">Цена</button>
+        <button class="header-btn contact-btn" onclick="scrollToContact()">Связаться</button>
+    </header>             
     <main>    
         <section class="block block-1">
             <div class="container">
@@ -21,8 +23,10 @@
                     <img src="images\nabor.png" alt="Набор">
                 </div> 
                 <div class="text-box">
-                    <h1>СИП</h1>
-                    <p>Наборы для обучения эксплуатации БПЛА</p>
+                    <div>
+                        <h1>СИП</h1>
+                        <p>Наборы для обучения эксплуатации БПЛА</p>
+                    </div>
                     <div class="text-box-under">
                         <p>Идеален для...</p>
                         <p>ОБУЧЕНИЯ 🧠</p>
@@ -97,34 +101,91 @@
                 </div>
             </div>
         </section>
+        <section class="pricing-section" id="price">
+            <div class="pricing-header-box">
+                <h2 class="pricing-header">
+                    <span class="pricing-header-subtitle">самое интересное...</span>
+                    <br>
+                    <span class="pricing-header-main">цены</span>
+                </h2>
+            </div>
+            <div class="pricing-container">
+                <div class="pricing-card">
+                    <h3 class="pricing-amount">100 000 ₽</h3>
+                    <ul class="pricing-details">
+                        <li>+ Беспилотник</li>
+                        <li>+ Всё необходимое для сборки</li>
+                    </ul>
+                </div>
+                <div class="pricing-image">
+                    <img src="images\nabor.png" alt="Комплект БПЛА">
+                </div>
+                <div class="pricing-card">
+                    <h3 class="pricing-amount">135 000 ₽</h3>
+                    <ul class="pricing-details">
+                        <li>+ Беспилотник</li>
+                        <li>+ Всё необходимое для сборки</li>
+                        <li>+ FPV шлем</li>
+                        <li>+ Пульт</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="block-features" class="block-features">
+            <!-- Заголовок -->
+            <h2 class="features-title">
+                <span class="features-title-box">Особенности комплекта</span>
+            </h2>
+            
+            <!-- Контейнер с линиями и особенностями -->
+            <div class="features-container">
+                <!-- Разделяющие линии -->
+                <div class="divider-vertical"></div>
+                <div class="divider-horizontal"></div>
+                
+                <!-- Сетка особенностей -->
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <img src="images\case.png" alt="Кейс">
+                        <p>удобный ударопрочный кейс</p>
+                    </div>
+                    <div class="feature-item">
+                        <img src="images\note.png" alt="Инструкция">
+                        <p>понятная инструкция по сборке</p>
+                    </div>
+                    <div class="feature-item">
+                        <img src="images\instrument.png" alt="Инструменты">
+                        <p>богатый комплект качественного инструмента</p>
+                    </div>
+                    <div class="feature-item">
+                        <img src="images\rama.png" alt="Запасные рамы">
+                        <p>запасные рамы</p>
+                    </div>
+                </div>
+            </div>
+        </section>                
         <section class="block block-2" id="contact">
             <div class="container">
                 <h2>Как удобнее?</h2>
                 <div class="contact-options">
-                    <button class="contact-option telegram">
+                    <button class="contact-option telegram" onclick="selectContact('Telegram')">
                         <img src="images/telegram_logo.jpg" alt="Telegram">
                     </button>
-                    <button class="contact-option email">
-                        <img src="images\pochta.png" alt="Email">
+                    <button class="contact-option email" onclick="selectContact('Email')">
+                        <img src="images/pochta.png" alt="Email">
                     </button>
-                    <button class="contact-option phone">
-                        <img src="images\telephone.png" alt="Телефон">
+                    <button class="contact-option phone" onclick="selectContact('Phone')">
+                        <img src="images/telephone.png" alt="Телефон">
                     </button>
                 </div>
-                <form class="contact-form">
-                    <input type="text" placeholder="Имя">
-                    <input type="text" placeholder="Адрес">
-                    <input type="text" placeholder="Телефон">
+                <form class="contact-form" id="contact-form">
+                    <input type="text" id="name" placeholder="Имя" required>
+                    <input type="text" id="address" placeholder="Адрес">
+                    <input type="text" id="phone" placeholder="Телефон">
                     <button type="submit" class="submit-button">Отправить контакт</button>
                 </form>
             </div>
-        </section>    
-        <section class="block block-4">
-            <div class="container">
-                <h2>Почему СИП?</h2>
-                <p>Значительно выгоднее конкурентов, безопаснее и практичнее.</p>
-            </div>
-        </section>
+        </section>          
     </main>
     <footer class="footer">
         <div class="container">
