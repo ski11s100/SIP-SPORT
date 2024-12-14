@@ -82,42 +82,20 @@ document.getElementById('contact-form').addEventListener('submit', function (eve
     window.location.href = mailtoLink;
 });
 
-function scrollToGallery() {
-    const gallerySection = document.querySelector('#gallery');
-    if (gallerySection) {
-        gallerySection.scrollIntoView({ behavior: 'smooth' });
-    } else {
-        console.error('Секция с ID "gallery" не найдена.');
-    }
-}
-
-function scrollToFeatures() {
-    const featuresSection = document.querySelector('#features');
-    if (featuresSection) {
-        featuresSection.scrollIntoView({ behavior: 'smooth' });
-    } else {
-        console.error('Секция с ID "features" не найдена.');
-    }
-}
-
 function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-function scrollToPrice() {
-    const priceSection = document.querySelector('#price');
-    if (priceSection) {
-        priceSection.scrollIntoView({ behavior: 'smooth' });
-    } else {
-        console.error('Секция с ID "price" не найдена.');
+function scrollToSection(event, sectionId) {
+    event.preventDefault(); // Отменяет стандартное поведение ссылки
+    const offset = 130; // Сдвиг в пикселях (высота шапки или другой элемент)
+    const element = document.getElementById(sectionId); // Находим элемент по ID
+    if (element) {
+        const topPosition = element.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({
+            top: topPosition,
+            behavior: 'smooth' // Плавная прокрутка
+        });
     }
 }
 
-function scrollToContact() {
-    const contactSection = document.querySelector('#contact');
-    if (contactSection) {
-        contactSection.scrollIntoView({ behavior: 'smooth' });
-    } else {
-        console.error('Секция с ID "contact" не найдена.');
-    }
-}
