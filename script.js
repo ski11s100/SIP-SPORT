@@ -99,3 +99,10 @@ function scrollToSection(event, sectionId) {
     }
 }
 
+function navigateToReviews() {
+    window.location.href = 'otzivy.html'; // Переход к странице с отзывами
+}
+
+function navigateToStatiyi() {
+    window.location.href = 'statiyi.html'; // Переход к странице с отзывами
+}

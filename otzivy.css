@@ -1,0 +1,140 @@
+/* Общие стили */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+}
+
+.reviews-header,
+.reviews,
+.feedback {
+    margin-top: 80px; /* Отступ равен высоте шапки */
+}
+
+.header {
+    position: fixed; /* Фиксируем шапку сверху */
+    top: 0; /* Прижимаем к верхней части экрана */
+    left: 0; /* Прижимаем к левой границе */
+    width: 100%; /* Полная ширина */
+    background-color: #333; /* Цвет фона */
+    color: white;
+    display: flex; /* Flexbox для выравнивания элементов */
+    justify-content: space-between; /* Элементы по краям */
+    align-items: center; /* Центрирование по вертикали */
+    padding: 10px 20px; /* Внутренние отступы */
+    z-index: 1000; /* Поверх всего остального контента */
+    box-sizing: border-box; /* Учитываем padding в ширине */
+}
+
+.logo img {
+    height: 40px; /* Размер логотипа */
+}
+
+.btn-home {
+    background-color: #008927;
+    color: white;
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-home:hover {
+    background-color: #00c43d;
+}
+
+/* Добавляем отступ сверху для основного контента */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.main-content {
+    margin-top: 70px; /* Отступ равный высоте шапки */
+}
+
+
+
+.reviews-header {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f4f4f4;
+}
+
+/* Блок отзывов */
+.reviews {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 20px;
+}
+
+.review-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.review-text {
+    width: 50%;
+}
+
+.stars {
+    color: gold;
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+/* Слайдер */
+.review-slider {
+    position: relative;
+    width: 40%;
+}
+
+.review-slider img {
+    width: 100%;
+    display: none;
+    border-radius: 10px;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.review-slider img.active {
+    display: block;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.slider-btn.prev-btn {
+    left: 10px;
+}
+
+.slider-btn.next-btn {
+    right: 10px;
+}
+
+.feedback {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}

@@ -59,6 +59,46 @@ body, html {
     margin: 0;
 }
 
+.reviews-btn {
+    display: inline-block;
+    background-color: #005fc4; /* Цвет фона */
+    color: white;
+    border: none;
+    padding: 10px 20px; /* Отступы */
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-left: 0; /* Убираем отступ слева от других кнопок */
+    margin-right: 200px; /* Отступ справа от логотипа */
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.reviews-btn:hover {
+    background-color: #007BFF; /* Цвет при наведении */
+}
+
+.statiyi-btn {
+    display: inline-block;
+    background-color: #005fc4; /* Цвет фона */
+    color: white;
+    border: none;
+    padding: 10px 20px; /* Отступы */
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-left: 0; /* Убираем отступ слева от других кнопок */
+    margin-right: 20px; /* Отступ справа от логотипа */
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.statiyi-btn:hover {
+    background-color: #007BFF; /* Цвет при наведении */
+}
+
 .nav__list__item__link {
     display: inline-block;
     background-color: #008927;
@@ -751,16 +791,33 @@ body, html {
     color: #ffffff;
 }
 
-/* Социальные иконки */
-.footer__socials a img {
-    width: 24px;
-    height: 24px;
-    margin-right: 10px;
+/* Общий контейнер для соцсетей */
+.footer__socials {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* Стили для ВКонтакте */
+.social-vk img {
+    width: 40px;
+    height: auto;
     transition: transform 0.3s ease;
 }
 
-.footer__socials a:hover img {
-    transform: scale(1.2);
+.social-vk:hover img {
+    transform: scale(1.5); /* Увеличение только ВКонтакте */
+}
+
+/* Стили для Телеграм */
+.social-tg img {
+    width: 80px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.social-tg:hover img {
+    transform: scale(1.5); /* Увеличение только Телеграм */
 }
 
 /* Копирайт */
